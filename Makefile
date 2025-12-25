@@ -7,7 +7,7 @@ else
 endif
 SCRIPTS_DIR := ./scripts
 
-.PHONY: help process validate validate-single update clean test generate download-resources add_resource add-category sort submit submit-resource format format-check
+.PHONY: help process validate validate-single update clean test generate download-resources add_resource add-category sort submit submit-resource format format-check audit audit-scoped
 
 help:
 	@echo "Available commands:"
@@ -24,6 +24,8 @@ help:
 	@echo "  make update            - Run both process and validate"
 	@echo "  make download-resources - Download active resources from GitHub"
 	@echo "  make sort              - Sort resources by category, sub-category, and name"
+	@echo "  make audit             - Run high-level audit of repository"
+	@echo "  make audit-scoped      - Run scoped audit with filters (see below)"
 	@echo "  make clean             - Remove generated files"
 	@echo ""
 	@echo "Options:"
@@ -35,6 +37,13 @@ help:
 	@echo "  make download-resources LICENSE='MIT' - Download resources with specific license"
 	@echo "  make download-resources MAX_DOWNLOADS=N - Limit downloads to N resources"
 	@echo "  make download-resources HOSTED_DIR='path' - Custom hosted directory path"
+	@echo "  make audit-scoped CATEGORY='Category Name' - Audit specific category"
+	@echo "  make audit-scoped SUB_CATEGORY='Sub-Category' - Audit specific sub-category"
+	@echo "  make audit-scoped AUTHOR='author-name' - Audit specific author's resources"
+	@echo "  make audit-scoped LICENSE='MIT' - Audit resources with specific license"
+	@echo "  make audit-scoped INACTIVE=1 - Audit only inactive resources"
+	@echo "  make audit-scoped NO_LICENSE=1 - Audit resources without license"
+	@echo "  make audit-scoped RECENT_DAYS=30 - Audit resources added in last N days"
 	@echo ""
 	@echo "Environment Variables:"
 	@echo "  GITHUB_TOKEN - Set to avoid GitHub API rate limiting (export GITHUB_TOKEN=...)"
@@ -147,3 +156,21 @@ submit:
 
 # Alias for submit
 submit-resource: submit
+
+# Run high-level audit
+audit:
+	@echo "Running high-level audit..."
+	@$(PYTHON) $(SCRIPTS_DIR)/audit.py
+
+# Run scoped audit with filters
+audit-scoped:
+	@echo "Running scoped audit..."
+	@ARGS=""; \
+	if [ -n "$(CATEGORY)" ]; then ARGS="$$ARGS --category '$(CATEGORY)'"; fi; \
+	if [ -n "$(SUB_CATEGORY)" ]; then ARGS="$$ARGS --sub-category '$(SUB_CATEGORY)'"; fi; \
+	if [ -n "$(AUTHOR)" ]; then ARGS="$$ARGS --author '$(AUTHOR)'"; fi; \
+	if [ -n "$(LICENSE)" ]; then ARGS="$$ARGS --license '$(LICENSE)'"; fi; \
+	if [ -n "$(INACTIVE)" ]; then ARGS="$$ARGS --inactive"; fi; \
+	if [ -n "$(NO_LICENSE)" ]; then ARGS="$$ARGS --no-license"; fi; \
+	if [ -n "$(RECENT_DAYS)" ]; then ARGS="$$ARGS --recent-days $(RECENT_DAYS)"; fi; \
+	eval $(PYTHON) $(SCRIPTS_DIR)/audit.py $$ARGS
