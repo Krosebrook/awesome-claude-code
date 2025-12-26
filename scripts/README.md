@@ -123,7 +123,19 @@ The generated README uses collapsible `<details>` elements for better navigation
 - Override support from `.templates/resource-overrides.yaml`
 - JSON output for CI/CD integration
 
-### 5. `download_resources.py`
+### 5. `audit.py`
+**Purpose**: High-level and scoped auditing of repository resources  
+**Usage**: `make audit` or `make audit-scoped [filters]`  
+**Features**:
+- High-level overview of repository health and statistics
+- Scoped audits with multiple filter options (category, author, license, etc.)
+- Identifies inactive resources and missing licenses
+- Tracks validation freshness (recently added, checked, outdated)
+- JSON output for programmatic processing
+- Combined filter support for targeted analysis
+- See `docs/AUDIT.md` for detailed documentation
+
+### 6. `download_resources.py`
 **Purpose**: Downloads resources from GitHub repositories  
 **Usage**: `make download-resources`  
 **Features**:
@@ -136,7 +148,7 @@ The generated README uses collapsible `<details>` elements for better navigation
 
 ## Helper Modules
 
-### 6. `git_utils.py`
+### 7. `git_utils.py`
 **Purpose**: Git and GitHub utility functions  
 **Interface**:
 - `get_github_username()`: Retrieves GitHub username
@@ -146,7 +158,7 @@ The generated README uses collapsible `<details>` elements for better navigation
 - `push_to_remote()`: Pushes branch to remote
 - GitHub CLI integration utilities
 
-### 7. `validate_single_resource.py`
+### 8. `validate_single_resource.py`
 **Purpose**: Validates individual resources  
 **Usage**: `make validate-single URL=...`  
 **Interface**:
