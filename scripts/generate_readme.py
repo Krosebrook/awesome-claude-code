@@ -2202,6 +2202,32 @@ class MinimalReadmeGenerator(ReadmeGenerator):
     def output_filename(self) -> str:
         return "README_CLASSIC.md"
 
+    def _generate_subcategory_anchor(self, category_id: str, sub_title: str) -> str:
+        """Generate a consistent anchor ID for a subcategory.
+
+        Args:
+            category_id: The category ID (e.g., "skills", "workflows")
+            sub_title: The subcategory title (e.g., "General", "IDE Integrations")
+
+        Returns:
+            The anchor ID for the subcategory (e.g., "skills-general", "ide-integrations-")
+        """
+        sub_anchor = sub_title.lower().replace(" ", "-").replace("&", "").replace("/", "")
+
+        # Use the same logic as VisualReadmeGenerator for consistency
+        if sub_title == "General":
+            # Use general_anchor_map for consistent anchor generation
+            if self.general_anchor_map:
+                sub_anchor = self.general_anchor_map.get(
+                    (category_id, sub_title), f"{category_id}-general"
+                )
+            else:
+                sub_anchor = f"{category_id}-general"
+        else:
+            sub_anchor = sub_anchor + "-"
+
+        return sub_anchor
+
     def format_resource_entry(self, row: dict, include_separator: bool = True) -> str:
         """Format resource as plain markdown with collapsible GitHub stats."""
         _ = include_separator  # Not used in minimal version (no separators)
@@ -2298,22 +2324,7 @@ class MinimalReadmeGenerator(ReadmeGenerator):
                     ]
 
                     if resources:
-                        sub_anchor = (
-                            sub_title.lower().replace(" ", "-").replace("&", "").replace("/", "")
-                        )
-
-                        # Use the same logic as VisualReadmeGenerator for consistency
-                        if sub_title == "General":
-                            # Use general_anchor_map for consistent anchor generation
-                            if self.general_anchor_map:
-                                sub_anchor = self.general_anchor_map.get(
-                                    (category_id, sub_title), f"{category_id}-general"
-                                )
-                            else:
-                                sub_anchor = f"{category_id}-general"
-                        else:
-                            sub_anchor = sub_anchor + "-"
-
+                        sub_anchor = self._generate_subcategory_anchor(category_id, sub_title)
                         toc_lines.append(f"  - [{sub_title}](#{sub_anchor})")
 
                 toc_lines.append("")
@@ -2390,20 +2401,8 @@ class MinimalReadmeGenerator(ReadmeGenerator):
             ]
 
             if resources:
-                # Generate anchor ID for subcategory (matching TOC format)
-                sub_anchor = sub_title.lower().replace(" ", "-").replace("&", "").replace("/", "")
-
-                # Use the same logic as VisualReadmeGenerator and TOC for consistency
-                if sub_title == "General":
-                    # Use general_anchor_map for consistent anchor generation
-                    if self.general_anchor_map:
-                        sub_anchor = self.general_anchor_map.get(
-                            (category_id, sub_title), f"{category_id}-general"
-                        )
-                    else:
-                        sub_anchor = f"{category_id}-general"
-                else:
-                    sub_anchor = sub_anchor + "-"
+                # Generate anchor ID for subcategory using shared helper
+                sub_anchor = self._generate_subcategory_anchor(category_id, sub_title)
 
                 lines.append(f'<details open id="{sub_anchor}">')
                 lines.append(
