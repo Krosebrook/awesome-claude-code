@@ -71,50 +71,6 @@ Professional development environment for Claude Code with spec-driven workflow, 
 </details>
 <br>
 
-[`Claude Code Hook Comms (HCOM)`](https://github.com/aannoo/claude-hook-comms) &nbsp; by &nbsp; [aannoo](https://github.com/aannoo)  &nbsp;&nbsp;⚖️&nbsp;&nbsp;MIT  
-Lightweight CLI tool for real-time communication between Claude Code sub agents using hooks. Enables multi-agent collaboration with @-mention targeting, live dashboard monitoring, and zero-dependency implementation. [NOTE: At the time of posting, this resource is a little unstable - I'm sharing it anyway, because I think it's incredibly promising and creative. I hope by the time you read this, it is production-ready.]
-
-<details>
-<summary>📊 GitHub Stats</summary>
-
-![GitHub Stats for claude-hook-comms](https://github-readme-stats-plus-theta.vercel.app/api/pin/?repo=claude-hook-comms&username=aannoo&all_stats=true&stats_only=true)
-
-</details>
-<br>
-
-[`Claude Mountaineering Skills`](https://github.com/dreamiurg/claude-mountaineering-skills) &nbsp; by &nbsp; [Dmytro Gaivoronsky](https://github.com/dreamiurg)  &nbsp;&nbsp;⚖️&nbsp;&nbsp;MIT  
-Claude Code skill that automates mountain route research for North American peaks. Aggregates data from 10+ mountaineering sources like Mountaineers.org, PeakBagger.com and SummitPost.com to generate detailed route beta reports with weather, avalanche conditions, and trip reports.
-
-<details>
-<summary>📊 GitHub Stats</summary>
-
-![GitHub Stats for claude-mountaineering-skills](https://github-readme-stats-plus-theta.vercel.app/api/pin/?repo=claude-mountaineering-skills&username=dreamiurg&all_stats=true&stats_only=true)
-
-</details>
-<br>
-
-[`Claude Code System Prompts`](https://github.com/Piebald-AI/claude-code-system-prompts) &nbsp; by &nbsp; [Piebald AI](https://github.com/Piebald-AI)  &nbsp;&nbsp;⚖️&nbsp;&nbsp;MIT  
-All parts of Claude Code's system prompt, including builtin tool descriptions, sub agent prompts (Plan/Explore/Task), utility prompts (CLAUDE.md, compact, Bash cmd, security review, agent creation, etc.). Updated for each Claude Code version.
-
-<details>
-<summary>📊 GitHub Stats</summary>
-
-![GitHub Stats for claude-code-system-prompts](https://github-readme-stats-plus-theta.vercel.app/api/pin/?repo=claude-code-system-prompts&username=Piebald-AI&all_stats=true&stats_only=true)
-
-</details>
-<br>
-
-[`Claude Codex Settings`](https://github.com/fcakyon/claude-codex-settings) &nbsp; by &nbsp; [fatih akyon](https://github.com/fcakyon)  &nbsp;&nbsp;⚖️&nbsp;&nbsp;Apache-2.0  
-A well-organized, well-written set of plugins covering core developer activities, such as working with common cloud platforms like GitHub, Azure, MongoDB, and popular services such as Tavily, Playwright, and more. Clear, not overly-opinionated, and compatible with a few other providers.
-
-<details>
-<summary>📊 GitHub Stats</summary>
-
-![GitHub Stats for claude-codex-settings](https://github-readme-stats-plus-theta.vercel.app/api/pin/?repo=claude-codex-settings&username=fcakyon&all_stats=true&stats_only=true)
-
-</details>
-<br>
-
 
 ## Contents [🔝](#awesome-claude-code)
 
@@ -124,21 +80,21 @@ A well-organized, well-written set of plugins covering core developer activities
 - <details open>
   <summary><a href="#agent-skills--">Agent Skills</a></summary>
 
-  - [General](#general-)
+  - [General](#skills-general)
 
   </details>
 
 - <details open>
   <summary><a href="#workflows--knowledge-guides--">Workflows & Knowledge Guides</a></summary>
 
-  - [General](#general--1)
+  - [General](#workflows-general)
 
   </details>
 
 - <details open>
   <summary><a href="#tooling--">Tooling</a></summary>
 
-  - [General](#general--2)
+  - [General](#tooling-general)
   - [IDE Integrations](#ide-integrations-)
   - [Usage Monitors](#usage-monitors-)
   - [Orchestrators](#orchestrators-)
@@ -148,21 +104,21 @@ A well-organized, well-written set of plugins covering core developer activities
 - <details open>
   <summary><a href="#status-lines--">Status Lines</a></summary>
 
-  - [General](#general--3)
+  - [General](#statusline-general)
 
   </details>
 
 - <details open>
   <summary><a href="#hooks--">Hooks</a></summary>
 
-  - [General](#general--4)
+  - [General](#hooks-general)
 
   </details>
 
 - <details open>
   <summary><a href="#slash-commands--">Slash-Commands</a></summary>
 
-  - [General](#general--5)
+  - [General](#slash-commands-general)
   - [Version Control & Git](#version-control--git-)
   - [Code Analysis & Testing](#code-analysis--testing-)
   - [Context Loading & Priming](#context-loading--priming-)
@@ -185,14 +141,14 @@ A well-organized, well-written set of plugins covering core developer activities
 - <details open>
   <summary><a href="#alternative-clients--">Alternative Clients</a></summary>
 
-  - [General](#general--6)
+  - [General](#alternative-clients-general)
 
   </details>
 
 - <details open>
   <summary><a href="#official-documentation--%EF%B8%8F">Official Documentation</a></summary>
 
-  - [General](#general--7)
+  - [General](#official-documentation-general)
 
   </details>
 
@@ -202,7 +158,7 @@ A well-organized, well-written set of plugins covering core developer activities
 
 > Agent skills are model-controlled configurations (files, scripts, resources, etc.) that enable Claude Code to perform specialized tasks requiring specific knowledge or capabilities.
 
-<details open>
+<details open id="skills-general">
 <summary><h3>General <a href="#awesome-claude-code">🔝</a></h3></summary>
 
 [`Claude Codex Settings`](https://github.com/fcakyon/claude-codex-settings) &nbsp; by &nbsp; [fatih akyon](https://github.com/fcakyon)  &nbsp;&nbsp;⚖️&nbsp;&nbsp;Apache-2.0  
@@ -292,7 +248,7 @@ Easily generate web assets from Claude Code including favicons, app icons (PWA),
 
 > A workflow is a tightly coupled set of Claude Code-native resources that facilitate specific projects
 
-<details open>
+<details open id="workflows-general">
 <summary><h3>General <a href="#awesome-claude-code">🔝</a></h3></summary>
 
 [`AB Method`](https://github.com/ayoubben18/ab-method) &nbsp; by &nbsp; [Ayoub Bensalah](https://github.com/ayoubben18)  &nbsp;&nbsp;⚖️&nbsp;&nbsp;MIT  
@@ -531,7 +487,7 @@ A broader project management workflow for Claude Code that encompasses not just 
 
 > Tooling denotes applications that are built on top of Claude Code and consist of more components than slash-commands and `CLAUDE.md` files
 
-<details open>
+<details open id="tooling-general">
 <summary><h3>General <a href="#awesome-claude-code">🔝</a></h3></summary>
 
 [`cc-sessions`](https://github.com/GWUDCAP/cc-sessions) &nbsp; by &nbsp; [toastdev](https://github.com/satoastshi)  &nbsp;&nbsp;⚖️&nbsp;&nbsp;MIT  
@@ -778,7 +734,7 @@ VoiceMode MCP brings natural conversations to Claude Code. It supports any OpenA
 
 </details>
 
-<details open>
+<details open id="ide-integrations-">
 <summary><h3>IDE Integrations <a href="#awesome-claude-code">🔝</a></h3></summary>
 
 [`Claude Code Chat`](https://marketplace.visualstudio.com/items?itemName=AndrePimenta.claude-code-chat) &nbsp; by &nbsp; [andrepimenta](https://github.com/andrepimenta)  &nbsp;&nbsp;⚖️&nbsp;&nbsp;&copy;  
@@ -841,7 +797,7 @@ A full-fledged desktop application for orchestrating, monitoring, and interactin
 
 </details>
 
-<details open>
+<details open id="usage-monitors-">
 <summary><h3>Usage Monitors <a href="#awesome-claude-code">🔝</a></h3></summary>
 
 [`CC Usage`](https://github.com/ryoppippi/ccusage) &nbsp; by &nbsp; [ryoppippi](https://github.com/ryoppippi)  &nbsp;&nbsp;⚖️&nbsp;&nbsp;NOASSERTION  
@@ -912,7 +868,7 @@ A community-driven leaderboard tool that enables developers to visualize, track,
 
 </details>
 
-<details open>
+<details open id="orchestrators-">
 <summary><h3>Orchestrators <a href="#awesome-claude-code">🔝</a></h3></summary>
 
 [`Claude Code Flow`](https://github.com/ruvnet/claude-code-flow) &nbsp; by &nbsp; [ruvnet](https://github.com/ruvnet)  &nbsp;&nbsp;⚖️&nbsp;&nbsp;MIT  
@@ -1013,7 +969,7 @@ A Rust CLI tool that lets you delegate development tasks to AI agents running in
 
 > Status lines - Configurations and customizations for Claude Code's status bar functionality
 
-<details open>
+<details open id="statusline-general">
 <summary><h3>General <a href="#awesome-claude-code">🔝</a></h3></summary>
 
 [`CCometixLine - Claude Code Statusline`](https://github.com/Haleclipse/CCometixLine) &nbsp; by &nbsp; [Haleclipse](https://github.com/Haleclipse)    
@@ -1070,7 +1026,7 @@ High-performance Rust-based statusline for Claude Code with persistent stats tra
 
 > Hooks are a powerful API for Claude Code that allows users to activate commands and run scripts at different points in Claude's agentic lifecycle.
 
-<details open>
+<details open id="hooks-general">
 <summary><h3>General <a href="#awesome-claude-code">🔝</a></h3></summary>
 
 [`Britfix`](https://github.com/Talieisin/britfix) &nbsp; by &nbsp; [Talieisin](https://github.com/Talieisin)  &nbsp;&nbsp;⚖️&nbsp;&nbsp;MIT  
@@ -1182,7 +1138,7 @@ Quality check hook for Node.js TypeScript projects with TypeScript compilation. 
 
 > "Slash Commands are customized, carefully refined prompts that control Claude's behavior in order to perform a specific task"
 
-<details open>
+<details open id="slash-commands-general">
 <summary><h3>General <a href="#awesome-claude-code">🔝</a></h3></summary>
 
 [`/create-hook`](https://github.com/omril321/automated-notebooklm/blob/main/.claude/commands/create-hook.md) &nbsp; by &nbsp; [Omri Lavi](https://github.com/omril321)  &nbsp;&nbsp;⚖️&nbsp;&nbsp;Apache-2.0  
@@ -1209,7 +1165,7 @@ A library of slash commands intended specifically to facilitate common and advan
 
 </details>
 
-<details open>
+<details open id="version-control--git-">
 <summary><h3>Version Control & Git <a href="#awesome-claude-code">🔝</a></h3></summary>
 
 [`/analyze-issue`](https://github.com/jerseycheese/Narraitor/blob/feature/issue-227-ai-suggestions/.claude/commands/analyze-issue.md) &nbsp; by &nbsp; [jerseycheese](https://github.com/jerseycheese)  &nbsp;&nbsp;⚖️&nbsp;&nbsp;MIT  
@@ -1335,7 +1291,7 @@ Updates branch names with proper prefixes and formats, enforcing naming conventi
 
 </details>
 
-<details open>
+<details open id="code-analysis--testing-">
 <summary><h3>Code Analysis & Testing <a href="#awesome-claude-code">🔝</a></h3></summary>
 
 [`/check`](https://github.com/rygwdn/slack-tools/blob/main/.claude/commands/check.md) &nbsp; by &nbsp; [rygwdn](https://github.com/rygwdn)    
@@ -1406,7 +1362,7 @@ Implements Test-Driven Development by analyzing feature requirements, creating t
 
 </details>
 
-<details open>
+<details open id="context-loading--priming-">
 <summary><h3>Context Loading & Priming <a href="#awesome-claude-code">🔝</a></h3></summary>
 
 [`/context-prime`](https://github.com/elizaOS/elizaos.github.io/blob/main/.claude/commands/context-prime.md) &nbsp; by &nbsp; [elizaOS](https://github.com/elizaOS)  &nbsp;&nbsp;⚖️&nbsp;&nbsp;MIT  
@@ -1488,7 +1444,7 @@ Reads all commands and key project files to optimize AI-assisted development by 
 
 </details>
 
-<details open>
+<details open id="documentation--changelogs-">
 <summary><h3>Documentation & Changelogs <a href="#awesome-claude-code">🔝</a></h3></summary>
 
 [`/add-to-changelog`](https://github.com/berrydev-ai/blockdoc-python/blob/main/.claude/commands/add-to-changelog.md) &nbsp; by &nbsp; [berrydev-ai](https://github.com/berrydev-ai)  &nbsp;&nbsp;⚖️&nbsp;&nbsp;MIT  
@@ -1548,7 +1504,7 @@ Reviews current documentation status, updates implementation progress, reviews p
 
 </details>
 
-<details open>
+<details open id="ci--deployment-">
 <summary><h3>CI / Deployment <a href="#awesome-claude-code">🔝</a></h3></summary>
 
 [`/release`](https://github.com/kelp/webdown/blob/main/.claude/commands/release.md) &nbsp; by &nbsp; [kelp](https://github.com/kelp)  &nbsp;&nbsp;⚖️&nbsp;&nbsp;MIT  
@@ -1575,7 +1531,7 @@ Activates virtual environments, runs CI-compatible check scripts, iteratively fi
 
 </details>
 
-<details open>
+<details open id="project--task-management-">
 <summary><h3>Project & Task Management <a href="#awesome-claude-code">🔝</a></h3></summary>
 
 [`/create-command`](https://github.com/scopecraft/command/blob/main/.claude/commands/create-command.md) &nbsp; by &nbsp; [scopecraft](https://github.com/scopecraft)    
@@ -1657,7 +1613,7 @@ A convenient command to quickly manage project todo items without leaving the Cl
 
 </details>
 
-<details open>
+<details open id="miscellaneous-">
 <summary><h3>Miscellaneous <a href="#awesome-claude-code">🔝</a></h3></summary>
 
 [`/fixing_go_in_graph`](https://github.com/Mjvolk3/torchcell/blob/main/.claude/commands/fixing_go_in_graph.md) &nbsp; by &nbsp; [Mjvolk3](https://github.com/Mjvolk3)    
@@ -1714,7 +1670,7 @@ Reformats documentation to use React Stepper component, transforming heading for
 
 > `CLAUDE.md` files are files that contain important guidelines and context-specific information or instructions that help Claude Code to better understand your project and your coding standards
 
-<details open>
+<details open id="language-specific-">
 <summary><h3>Language-Specific <a href="#awesome-claude-code">🔝</a></h3></summary>
 
 [`AI IntelliJ Plugin`](https://github.com/didalgolab/ai-intellij-plugin/blob/main/CLAUDE.md) &nbsp; by &nbsp; [didalgolab](https://github.com/didalgolab)  &nbsp;&nbsp;⚖️&nbsp;&nbsp;Apache-2.0  
@@ -1866,7 +1822,7 @@ Details Go project conventions with comprehensive error handling recommendations
 
 </details>
 
-<details open>
+<details open id="domain-specific-">
 <summary><h3>Domain-Specific <a href="#awesome-claude-code">🔝</a></h3></summary>
 
 [`AVS Vibe Developer Guide`](https://github.com/Layr-Labs/avs-vibe-developer-guide/blob/master/CLAUDE.md) &nbsp; by &nbsp; [Layr-Labs](https://github.com/Layr-Labs)  &nbsp;&nbsp;⚖️&nbsp;&nbsp;MIT  
@@ -1959,7 +1915,7 @@ Clear and direct instructives about style, permissions, Claude's "role", communi
 
 </details>
 
-<details open>
+<details open id="project-scaffolding--mcp-">
 <summary><h3>Project Scaffolding & MCP <a href="#awesome-claude-code">🔝</a></h3></summary>
 
 [`Basic Memory`](https://github.com/basicmachines-co/basic-memory/blob/main/CLAUDE.md) &nbsp; by &nbsp; [basicmachines-co](https://github.com/basicmachines-co)  &nbsp;&nbsp;⚖️&nbsp;&nbsp;AGPL-3.0  
@@ -2005,7 +1961,7 @@ Offers clear step-by-step installation instructions with multiple configuration 
 
 > Alternative Clients are alternative UIs and front-ends for interacting with Claude Code, either on mobile or on the desktop.
 
-<details open>
+<details open id="alternative-clients-general">
 <summary><h3>General <a href="#awesome-claude-code">🔝</a></h3></summary>
 
 [`Claudable`](https://github.com/opactorai/Claudable) &nbsp; by &nbsp; [Ethan Park](https://www.linkedin.com/in/seongil-park/)  &nbsp;&nbsp;⚖️&nbsp;&nbsp;MIT  
@@ -2040,7 +1996,7 @@ A command center for AI agents that syncs Claude Code sessions across terminal, 
 
 > Links to some of Anthropic's terrific documentation and resources regarding Claude Code
 
-<details open>
+<details open id="official-documentation-general">
 <summary><h3>General <a href="#awesome-claude-code">🔝</a></h3></summary>
 
 [`Anthropic Documentation`](https://docs.claude.com/en/home) &nbsp; by &nbsp; [Anthropic](https://github.com/anthropics)  &nbsp;&nbsp;⚖️&nbsp;&nbsp;&copy;  

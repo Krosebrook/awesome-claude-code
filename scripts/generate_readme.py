@@ -2202,6 +2202,31 @@ class MinimalReadmeGenerator(ReadmeGenerator):
     def output_filename(self) -> str:
         return "README_CLASSIC.md"
 
+    def _generate_subcategory_anchor(self, category_id: str, sub_title: str) -> str:
+        """Generate a consistent anchor ID for a subcategory.
+
+        Args:
+            category_id: The category ID (e.g., "skills", "workflows")
+            sub_title: The subcategory title (e.g., "General", "IDE Integrations")
+
+        Returns:
+            The anchor ID for the subcategory.
+            For General: "skills-general", "workflows-general"
+            For others: "ide-integrations-", "usage-monitors-"
+        """
+        sub_anchor = sub_title.lower().replace(" ", "-").replace("&", "").replace("/", "")
+
+        # Use the same logic as VisualReadmeGenerator for consistency
+        if sub_title == "General":
+            # Use general_anchor_map for consistent anchor generation across multiple General subcats
+            sub_anchor = self.general_anchor_map.get(
+                (category_id, sub_title), f"{category_id}-general"
+            )
+        else:
+            sub_anchor = sub_anchor + "-"
+
+        return sub_anchor
+
     def format_resource_entry(self, row: dict, include_separator: bool = True) -> str:
         """Format resource as plain markdown with collapsible GitHub stats."""
         _ = include_separator  # Not used in minimal version (no separators)
@@ -2263,10 +2288,9 @@ class MinimalReadmeGenerator(ReadmeGenerator):
         toc_lines.append("<summary>Table of Contents</summary>")
         toc_lines.append("")
 
-        general_counter = 0
-
         for category in self.categories:
             section_title = category.get("name", "")
+            category_id = category.get("id", "")
             icon = category.get("icon", "")
             subcategories = category.get("subcategories", [])
             anchor_suffix = get_anchor_suffix_for_icon(icon)
@@ -2299,19 +2323,7 @@ class MinimalReadmeGenerator(ReadmeGenerator):
                     ]
 
                     if resources:
-                        sub_anchor = (
-                            sub_title.lower().replace(" ", "-").replace("&", "").replace("/", "")
-                        )
-
-                        if sub_title == "General":
-                            if general_counter == 0:
-                                sub_anchor = "general-"
-                            else:
-                                sub_anchor = f"general--{general_counter}"
-                            general_counter += 1
-                        else:
-                            sub_anchor = sub_anchor + "-"
-
+                        sub_anchor = self._generate_subcategory_anchor(category_id, sub_title)
                         toc_lines.append(f"  - [{sub_title}](#{sub_anchor})")
 
                 toc_lines.append("")
@@ -2362,6 +2374,7 @@ class MinimalReadmeGenerator(ReadmeGenerator):
         lines = []
 
         title = category.get("name", "")
+        category_id = category.get("id", "")
         icon = category.get("icon", "")
         description = category.get("description", "").strip()
         category_name = category.get("name", "")
@@ -2387,7 +2400,10 @@ class MinimalReadmeGenerator(ReadmeGenerator):
             ]
 
             if resources:
-                lines.append("<details open>")
+                # Generate anchor ID for subcategory using shared helper
+                sub_anchor = self._generate_subcategory_anchor(category_id, sub_title)
+
+                lines.append(f'<details open id="{sub_anchor}">')
                 lines.append(
                     f'<summary><h3>{sub_title} <a href="#awesome-claude-code">🔝</a></h3></summary>'
                 )
