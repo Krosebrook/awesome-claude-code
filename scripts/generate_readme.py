@@ -2210,19 +2210,18 @@ class MinimalReadmeGenerator(ReadmeGenerator):
             sub_title: The subcategory title (e.g., "General", "IDE Integrations")
 
         Returns:
-            The anchor ID for the subcategory (e.g., "skills-general", "ide-integrations-")
+            The anchor ID for the subcategory.
+            For General: "skills-general", "workflows-general"
+            For others: "ide-integrations-", "usage-monitors-"
         """
         sub_anchor = sub_title.lower().replace(" ", "-").replace("&", "").replace("/", "")
 
         # Use the same logic as VisualReadmeGenerator for consistency
         if sub_title == "General":
-            # Use general_anchor_map for consistent anchor generation
-            if self.general_anchor_map:
-                sub_anchor = self.general_anchor_map.get(
-                    (category_id, sub_title), f"{category_id}-general"
-                )
-            else:
-                sub_anchor = f"{category_id}-general"
+            # Use general_anchor_map for consistent anchor generation across multiple General subcats
+            sub_anchor = self.general_anchor_map.get(
+                (category_id, sub_title), f"{category_id}-general"
+            )
         else:
             sub_anchor = sub_anchor + "-"
 
