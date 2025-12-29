@@ -192,22 +192,6 @@ _A well-balanced, "down-to-Earth" set of sub agents, skills, and commands,  that
 _Professional development environment for Claude Code with spec-driven workflow, TDD enforcement, cross-session memory, semantic search, quality hooks, and modular rules integration. A bit "heavyweight" but feature-packed and has wide coverage._  
 ![GitHub Stats for claude-codepro](https://github-readme-stats-plus-theta.vercel.app/api/pin/?repo=claude-codepro&username=maxritter&all_stats=true&stats_only=true&hide_border=true&bg_color=00000000&icon_color=FF0000&text_color=FF0000)
 
-<a href="https://github.com/aannoo/claude-hook-comms"><img src="assets/badge-claude-code-hook-comms-hcom.svg" alt="Claude Code Hook Comms (HCOM)"></a>  
-_Lightweight CLI tool for real-time communication between Claude Code sub agents using hooks. Enables multi-agent collaboration with @-mention targeting, live dashboard monitoring, and zero-dependency implementation. [NOTE: At the time of posting, this resource is a little unstable - I'm sharing it anyway, because I think it's incredibly promising and creative. I hope by the time you read this, it is production-ready.]_  
-![GitHub Stats for claude-hook-comms](https://github-readme-stats-plus-theta.vercel.app/api/pin/?repo=claude-hook-comms&username=aannoo&all_stats=true&stats_only=true&hide_border=true&bg_color=00000000&icon_color=FF0000&text_color=FF0000)
-
-<a href="https://github.com/dreamiurg/claude-mountaineering-skills"><img src="assets/badge-claude-mountaineering-skills.svg" alt="Claude Mountaineering Skills"></a>  
-_Claude Code skill that automates mountain route research for North American peaks. Aggregates data from 10+ mountaineering sources like Mountaineers.org, PeakBagger.com and SummitPost.com to generate detailed route beta reports with weather, avalanche conditions, and trip reports._  
-![GitHub Stats for claude-mountaineering-skills](https://github-readme-stats-plus-theta.vercel.app/api/pin/?repo=claude-mountaineering-skills&username=dreamiurg&all_stats=true&stats_only=true&hide_border=true&bg_color=00000000&icon_color=FF0000&text_color=FF0000)
-
-<a href="https://github.com/Piebald-AI/claude-code-system-prompts"><img src="assets/badge-claude-code-system-prompts.svg" alt="Claude Code System Prompts"></a>  
-_All parts of Claude Code's system prompt, including builtin tool descriptions, sub agent prompts (Plan/Explore/Task), utility prompts (CLAUDE.md, compact, Bash cmd, security review, agent creation, etc.). Updated for each Claude Code version._  
-![GitHub Stats for claude-code-system-prompts](https://github-readme-stats-plus-theta.vercel.app/api/pin/?repo=claude-code-system-prompts&username=Piebald-AI&all_stats=true&stats_only=true&hide_border=true&bg_color=00000000&icon_color=FF0000&text_color=FF0000)
-
-<a href="https://github.com/fcakyon/claude-codex-settings"><img src="assets/badge-claude-codex-settings.svg" alt="Claude Codex Settings"></a>  
-_A well-organized, well-written set of plugins covering core developer activities, such as working with common cloud platforms like GitHub, Azure, MongoDB, and popular services such as Tavily, Playwright, and more. Clear, not overly-opinionated, and compatible with a few other providers._  
-![GitHub Stats for claude-codex-settings](https://github-readme-stats-plus-theta.vercel.app/api/pin/?repo=claude-codex-settings&username=fcakyon&all_stats=true&stats_only=true&hide_border=true&bg_color=00000000&icon_color=FF0000&text_color=FF0000)
-
 
 <br>
 

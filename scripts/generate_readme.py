@@ -2263,10 +2263,9 @@ class MinimalReadmeGenerator(ReadmeGenerator):
         toc_lines.append("<summary>Table of Contents</summary>")
         toc_lines.append("")
 
-        general_counter = 0
-
         for category in self.categories:
             section_title = category.get("name", "")
+            category_id = category.get("id", "")
             icon = category.get("icon", "")
             subcategories = category.get("subcategories", [])
             anchor_suffix = get_anchor_suffix_for_icon(icon)
@@ -2303,12 +2302,15 @@ class MinimalReadmeGenerator(ReadmeGenerator):
                             sub_title.lower().replace(" ", "-").replace("&", "").replace("/", "")
                         )
 
+                        # Use the same logic as VisualReadmeGenerator for consistency
                         if sub_title == "General":
-                            if general_counter == 0:
-                                sub_anchor = "general-"
+                            # Use general_anchor_map for consistent anchor generation
+                            if self.general_anchor_map:
+                                sub_anchor = self.general_anchor_map.get(
+                                    (category_id, sub_title), f"{category_id}-general"
+                                )
                             else:
-                                sub_anchor = f"general--{general_counter}"
-                            general_counter += 1
+                                sub_anchor = f"{category_id}-general"
                         else:
                             sub_anchor = sub_anchor + "-"
 
@@ -2362,6 +2364,7 @@ class MinimalReadmeGenerator(ReadmeGenerator):
         lines = []
 
         title = category.get("name", "")
+        category_id = category.get("id", "")
         icon = category.get("icon", "")
         description = category.get("description", "").strip()
         category_name = category.get("name", "")
@@ -2387,7 +2390,22 @@ class MinimalReadmeGenerator(ReadmeGenerator):
             ]
 
             if resources:
-                lines.append("<details open>")
+                # Generate anchor ID for subcategory (matching TOC format)
+                sub_anchor = sub_title.lower().replace(" ", "-").replace("&", "").replace("/", "")
+
+                # Use the same logic as VisualReadmeGenerator and TOC for consistency
+                if sub_title == "General":
+                    # Use general_anchor_map for consistent anchor generation
+                    if self.general_anchor_map:
+                        sub_anchor = self.general_anchor_map.get(
+                            (category_id, sub_title), f"{category_id}-general"
+                        )
+                    else:
+                        sub_anchor = f"{category_id}-general"
+                else:
+                    sub_anchor = sub_anchor + "-"
+
+                lines.append(f'<details open id="{sub_anchor}">')
                 lines.append(
                     f'<summary><h3>{sub_title} <a href="#awesome-claude-code">🔝</a></h3></summary>'
                 )
